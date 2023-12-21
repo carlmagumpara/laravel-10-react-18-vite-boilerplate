@@ -1,0 +1,85 @@
+
+/*Chat*/
+
+.no-selected-message {
+  min-height: calc(60vh);
+}
+
+.chat-online {
+  color: #34ce57;
+}
+
+.chat-offline {
+  color: #e4606d;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 240px);
+  overflow-y: scroll;
+}
+
+.chat-users-list {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+  overflow-y: scroll;
+}
+
+.no-selected-message {
+  height: calc(100vh - 100px);
+}
+
+.chat-message-left, .chat-message-right {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.chat-message-left {
+  margin-right: auto;
+}
+
+.chat-message-right {
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+
+.avatars {
+  direction: rtl;
+
+  /* This is to get the stack with left on top */
+  text-align: left;
+
+  /* Now need to explitly align left */
+  padding-left: 25px;
+
+  /* Same value as the negative margin */
+  .avatar {
+    position: relative;
+    img {
+      border-radius: 50%;
+      position: relative;
+      left: -5px;
+      margin-left: -25px;
+      z-index: 1;
+      border: 1px solid black;
+    }
+    .status {
+      position: relative;
+      left: -15px;
+      bottom: -15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      z-index: 2;
+    }
+    .status.online {
+      background-color: green;
+    }
+    .status.offline {
+      background-color: gray;
+    }
+  }
+}
