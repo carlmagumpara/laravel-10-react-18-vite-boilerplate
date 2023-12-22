@@ -47,12 +47,11 @@ function Index() {
             <Col md={9}>
               <Formik
                 initialValues={{
-                  first_name: '',
-                  last_name: '',
-                  gender: '',
-                  date_of_birth: '',
-                  address: '',
-                  ...auth.getUser,
+                  first_name: auth.getUser.first_name,
+                  last_name: auth.getUser.last_name,
+                  gender: auth.getUser.gender ?? '',
+                  date_of_birth: auth.getUser.date_of_birth ?? '',
+                  address: auth.getUser.address ?? '',
                 }}
                 validationSchema={Yup.object().shape({
                   first_name: Yup.string().required('Required').nullable(),

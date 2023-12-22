@@ -51,7 +51,6 @@ trait ChartData
                     'data' => $this->generateData($weeks, new User, ['role_id' => 2], 'by_week')
                 ],
             ],
-            'services' => Service::with(['appointmentStylistService'])->withCount(['appointmentStylistService'])->get(),
         ];
     }
 }

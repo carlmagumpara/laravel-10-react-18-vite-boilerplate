@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>How To Install React in Laravel 10 with Vite</title>
+    <title>{{ config('app.name') }}</title>
 </head>
 <body>
     <div id="root"></div>
