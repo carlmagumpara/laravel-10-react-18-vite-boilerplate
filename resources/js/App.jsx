@@ -16,15 +16,6 @@ import Dashboard from 'src/pages/dashboard';
 import Notifications from 'src/pages/notifications';
 import Messages from 'src/pages/messages';
 
-import Appointments from 'src/pages/appointments';
-import Calendar from 'src/pages/appointments/calendar';
-import Services from 'src/pages/services';
-import Stylists from 'src/pages/stylists';
-import Announcements from 'src/pages/announcements';
-import History from 'src/pages/history';
-import Payments from 'src/pages/payments';
-import StylistPositions from 'src/pages/stylist-positions';
-
 import Users from 'src/pages/users';
 import Profile from 'src/pages/profile';
 import ChangePassword from 'src/pages/change-password';
@@ -43,21 +34,6 @@ function App() {
               <Route path=":conversation_id" element={<Messages />} />
               <Route path="" element={<Messages />} />
             </Route>
-            <Route path="calendar" element={<Calendar />} />
-            <Route path="users">
-              <Route path="admins" element={<Users key="admin" role="admin" roleId="1" />} />
-              <Route path="clients" element={<Users key="clients" role="client" roleId="2" />} />
-            </Route>
-            <Route path="appointments">
-              <Route path="list" element={<Appointments />} />
-              <Route path="calendar" element={<Calendar />} />
-            </Route>
-            <Route path="services" element={<Services />} />
-            <Route path="stylists" element={<Stylists />} />
-            <Route path="announcements" element={<Announcements />} />
-            <Route path="payments" element={<Payments />} />
-            <Route path="stylist-positions" element={<StylistPositions />} />
-            <Route path="history" element={<History />} />
             <Route path="users">
               <Route path="admins" element={<Users key="admin" role="admin" roleId="1" />} />
               <Route path="clients" element={<Users key="clients" role="client" roleId="2" />} />

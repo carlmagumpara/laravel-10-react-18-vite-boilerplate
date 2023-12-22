@@ -45,20 +45,11 @@ function Sidebar() {
     <div className="w-100">
       <div className="mb-3">
         <img src={logo} className="w-100" />
-        {/*<span className="ms-2 fw-bold">TRIX'S Salon</span>*/}
       </div>
       <Nav className="flex-column">
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/dashboard"><FaHome /> <span className="ms-2">Dashboard</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2 d-flex justify-content-between align-items-start" to="/notifications"><span><FaBell /> <span className="ms-2">Notifications</span></span> {notification_count ? <Badge bg="danger">{notification_count}</Badge> : null}</Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2 d-flex justify-content-between align-items-start" to="/messages"><span><FaInbox /> <span className="ms-2">Messages</span></span> {message_count ? <Badge bg="danger">{message_count}</Badge> : null}</Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/users/clients"><span><FaUsers /> <span className="ms-2">Clients</span></span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/appointments/list"><FaCalendarCheck /> <span className="ms-2">Appointments</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/services"><FaCut /> <span className="ms-2">Services</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/stylists"><FaUsers /> <span className="ms-2">Stylists</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/payments"><FaMoneyBill /> <span className="ms-2">Payments</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/announcements"><FaBullhorn /> <span className="ms-2">Announcements</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/stylist-positions"><FaUserPlus /> <span className="ms-2">Stylist Positions</span></Nav.Link>
-        <Nav.Link as={Link} className="text-white fw-bold p-2" to="/history"><FaClock /> <span className="ms-2">History</span></Nav.Link>
+        <Nav.Link as={Link} className="text-dark fw-bold p-2" to="/dashboard"><FaHome /> <span className="ms-2">Dashboard</span></Nav.Link>
+        <Nav.Link as={Link} className="text-dark fw-bold p-2 d-flex justify-content-between align-items-start" to="/notifications"><span><FaBell /> <span className="ms-2">Notifications</span></span> {notification_count ? <Badge bg="danger">{notification_count}</Badge> : null}</Nav.Link>
+        <Nav.Link as={Link} className="text-dark fw-bold p-2 d-flex justify-content-between align-items-start" to="/messages"><span><FaInbox /> <span className="ms-2">Messages</span></span> {message_count ? <Badge bg="danger">{message_count}</Badge> : null}</Nav.Link>
       </Nav>
     </div>
   )
@@ -68,7 +59,7 @@ function Navigator({ open, setOpen }) {
   const auth = useAuth();
 
   return (
-    <Navbar className="p-3 border-bottom" style={{ backgroundColor: '#fdeffa' }}>
+    <Navbar className="p-3 border-bottom" style={{ backgroundColor: '#ffffff' }}>
       <Container fluid className="">
         <Button
           onClick={() => setOpen(!open)}
@@ -79,7 +70,7 @@ function Navigator({ open, setOpen }) {
             {open ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
           </h4>
         </Button>
-        <h5 className="mb-0 ms-3">TRIX'S MOBILE APPOINTMENT MANAGEMENT SYSTEM</h5>
+        <h5 className="mb-0 ms-3">LOCALLINKUP</h5>
         <Navbar.Collapse className="justify-content-end">
           <NavDropdown title={<span className="text-dark">Signed in as: {`${auth.getName}`} <img src={auth.getAvatar} width="30" height="30" style={{ objectFit: 'cover' }} className="rounded-circle ms-2" /></span>} id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="/profile">
@@ -112,7 +103,7 @@ function Wrapper() {
     <Container fluid>
       <div className="row flex-nowrap">
         {open ? (
-          <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style={{ backgroundColor: '#f793e7' }}>
+          <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 border-end" style={{ backgroundColor: '#ffffff' }}>
             <div className="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100">
               <Sidebar />
             </div>

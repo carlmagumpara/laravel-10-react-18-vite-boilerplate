@@ -9,12 +9,6 @@ import { fileApi } from '../services/files';
 import { profileApi } from '../services/profile';
 import { notificationApi } from '../services/notifications';
 import { conversationApi } from '../services/conversations';
-import { serviceApi } from '../services/services';
-import { appointmentApi } from '../services/appointments';
-import { announcementApi } from '../services/announcements';
-import { stylistApi } from '../services/stylists';
-import { paymentApi } from '../services/payments';
-import { stylistPositionApi } from '../services/stylist-positions';
 
 const appReducer = combineReducers({
   user: userReducer,
@@ -27,12 +21,6 @@ const appReducer = combineReducers({
   [profileApi.reducerPath]: profileApi.reducer,
   [notificationApi.reducerPath]: notificationApi.reducer,
   [conversationApi.reducerPath]: conversationApi.reducer,
-  [serviceApi.reducerPath]: serviceApi.reducer,
-  [appointmentApi.reducerPath]: appointmentApi.reducer,
-  [announcementApi.reducerPath]: announcementApi.reducer,
-  [stylistApi.reducerPath]: stylistApi.reducer,
-  [paymentApi.reducerPath]: paymentApi.reducer,
-  [stylistPositionApi.reducerPath]: stylistPositionApi.reducer,
 });
 
 export const servicesMiddleware = [
@@ -44,12 +32,6 @@ export const servicesMiddleware = [
   profileApi.middleware,
   notificationApi.middleware,
   conversationApi.middleware,
-  serviceApi.middleware,
-  appointmentApi.middleware,
-  announcementApi.middleware,
-  stylistApi.middleware,
-  paymentApi.middleware,
-  stylistPositionApi.middleware
 ];
 
 export default appReducer;
