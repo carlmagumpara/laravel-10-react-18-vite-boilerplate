@@ -7,7 +7,7 @@ function Index() {
 
   console.log('auth', auth);
 
-  return auth.isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />;
+  return <p>Welcome to Landing Page</p>;
 }
 
 export default Index;
