@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Modal, Form, Button, Row, Col, Table, Image, Dropdown, Tab, Tabs } from 'react-bootstrap';
 import { FaTrash, FaPencilAlt, FaEye, FaEnvelope, FaFile } from 'react-icons/fa';
 import moment from 'moment';
-import { useGetUsersQuery, useCreateUserMutation, useUpdateUserMutation, useDeleteUserMutation, useApproveCredentialsMutation, useDeclineCredentialsMutation } from 'src/redux/services/user';
+import { useGetUsersQuery, useCreateUserMutation, useUpdateUserMutation, useDeleteUserMutation } from 'src/redux/services/user';
 import { confirm } from 'src/shared/confirm';
 import { useAntMessage } from 'src/context/ant-message';
 import Loader from 'src/shared/loader';

@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom/client";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-datetime/css/react-datetime.css';
@@ -15,9 +15,9 @@ import { store, persistor } from 'src/redux/store';
 import { OnlineProvider } from 'src/context/online';
 import { AntMessageProvider } from 'src/context/ant-message';
 
-const root = document.getElementById("root");
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-render((
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -31,4 +31,4 @@ render((
       </PersistGate>
     </Provider>  
   </React.StrictMode>
-), root);
+);

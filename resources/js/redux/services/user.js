@@ -24,7 +24,7 @@ export const userApi = createApi({
   tagTypes: ['User'],
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: ({ role_id, search = '', page = 1, per_page = 10 }) => `/users/role/${role_id}?search=${search}&page=${page}&per_page=${per_page}`,
+      query: ({ roles = '', search = '', page = 1, per_page = 10 }) => `/users?search=${search}&roles=${roles}&page=${page}&per_page=${per_page}`,
       providesTags: ['User'],
     }),
     createUser: builder.mutation({
@@ -45,35 +45,11 @@ export const userApi = createApi({
     }),
     deleteUser: builder.mutation({
       query: (body) => ({
-        url: '/users/delete',
+        url: `/users/update/${body.id}`,
         method: 'POST',
-        body: body,
+        body: body.data,
       }),
       invalidatesTags: ['User'],
-    }),
-    approveCredentials: builder.mutation({
-      query: (body) => ({
-        url: '/users/credentials/approve',
-        method: 'POST',
-        body,
-      }),
-      invalidatesTags: ['User'],
-    }),
-    declineCredentials: builder.mutation({
-      query: (body) => ({
-        url: '/users/credentials/decline',
-        method: 'POST',
-        body,
-      }),
-      invalidatesTags: ['User'],
-    }),
-    getEmployeeRanking: builder.query({
-      query: ({ search = '', page = 1, per_page = 10 }) => `/users/ranking/employee?search=${search}&page=${page}&per_page=${per_page}`,
-      providesTags: ['Ranking'],
-    }),
-    getEmployerRanking: builder.query({
-      query: ({ search = '', page = 1, per_page = 10 }) => `/users/ranking/employer?search=${search}&page=${page}&per_page=${per_page}`,
-      providesTags: ['Ranking'],
     }),
   }),
 })
@@ -85,8 +61,4 @@ export const {
   useCreateUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
-  useApproveCredentialsMutation,
-  useDeclineCredentialsMutation,
-  useGetEmployeeRankingQuery,
-  useGetEmployerRankingQuery,
 } = userApi
